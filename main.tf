@@ -40,10 +40,10 @@ resource "aws_elasticache_replication_group" "elasticache" {
   node_type                  = var.node_type
   port                       = 6379
   automatic_failover_enabled = true
-  subnet_group_name = aws_elasticache_subnet_group.default.name
-  security_group_ids = [aws_security_group.elasticache.id]
-  num_node_groups         = var.num_node_groups
-  replicas_per_node_group = var.replicas_per_node_group
+  subnet_group_name          = aws_elasticache_subnet_group.default.name
+  security_group_ids         = [aws_security_group.elasticache.id]
+  num_node_groups            = var.num_node_groups
+  replicas_per_node_group    = var.replicas_per_node_group
   tags = merge(
     local.common_tags,
     { Name = "${var.env}-elasticache" }
