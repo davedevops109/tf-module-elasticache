@@ -50,5 +50,5 @@ resource "aws_elasticache_cluster" "elasticache" {
 }
 
 output "redis" {
-  value = aws_elasticache_cluster.cache_nodes[0].address
+  value = aws_elasticache_cluster
 }
