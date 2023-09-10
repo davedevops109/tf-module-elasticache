@@ -48,3 +48,7 @@ resource "aws_elasticache_cluster" "elasticache" {
     { Name = "${var.env}-elasticache" }
   )
 }
+
+output "redis" {
+  value = aws_elasticache_cluster.elasticache
+}
