@@ -36,7 +36,7 @@ resource "aws_security_group" "elasticache" {
 
 
 resource "aws_elasticache_cluster" "elasticache" {
-  cluster_id           = "${var.env}-elasticache"
+  cluster_id           = "${var.env}-elasticache-cluster"
   engine               = "redis"
   node_type            = var.node_type
   num_cache_nodes      = var.num_cache_nodes
@@ -49,6 +49,6 @@ resource "aws_elasticache_cluster" "elasticache" {
   )
 }
 
-output "redis" {
-  value = aws_elasticache.elasticache.cache_nodes[0].address
-}
+#output "redis" {
+#  value = aws_elasticache.cache_nodes[0].address
+#}
